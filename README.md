@@ -1,24 +1,34 @@
-# README
+# NUUMA
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+「沼」「推し」など、自分が好きなものについて思いの丈を熱く語るサイトです。
 
-Things you may want to cover:
+### サイトテーマ
+自分が好きな「もの」や「こと」について他の人にプレゼンしたい。同志を増やして交流したい。その場を提供するサイトです。
 
-* Ruby version
+### テーマを選んだ理由
+私自身、好きなゲームや本ができた時にこの感動や面白さを共有したいと思う時があります。Twitter等既存のSNSでも共有できますが、「より熱く語る」ことをメインにしたサイトがあれば仲間を見つけやすいのではないかと思いました。また、他の人がどんなものに情熱を傾けているのか、自分の知らないちょっとディープな世界を知ることのきっかけとなるサイトがあれば面白いのではないかと思い、テーマとして選びました。
 
-* System dependencies
+### ターゲットユーザ
+*10代〜40代の一般ユーザ（主に女性）
 
-* Configuration
+### 主な利用シーン
+*自分の趣味や好きなことについて共有したいとき
+*同じ趣味の仲間を見つけたいとき
+*未知の分野について興味を持つきっかけとして
 
-* Database creation
+## 設計書
+作成後、記載します。
 
-* Database initialization
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1w5kSOS2n0A2Ldfb5wStyXXZQDPWPBsR5jojbxHX7aJg/edit#gid=0>
 
-* How to run the test suite
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+写真素材等使用予定あり。後ほど記入します。
