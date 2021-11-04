@@ -28,7 +28,9 @@ Twitter等既存のSNSではなく、「熱く語る」ことを主旨とした�
 - 未知の分野について興味を持つきっかけとして
 
 ## 設計書
-作成後、記載します。
+- ER図は[こちら](https://app.diagrams.net/#G11R7E4h1vChRv6zy5JNYo5h-DVha9QPq7)
+- 会員側フレームワークは[こちら](https://app.diagrams.net/#G1BbzqrYdGwWd2k7lp1QgqWdKV_QycIq4R)
+- 管理者側フレームワークは[こちら](https://app.diagrams.net/#G1BrLlPzr4Jk8FzswIUWFgDlpph5BOtb3S)
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1w5kSOS2n0A2Ldfb5wStyXXZQDPWPBsR5jojbxHX7aJg/edit#gid=0>
