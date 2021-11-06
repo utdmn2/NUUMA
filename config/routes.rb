@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'categories/new'
+    get 'categories/index'
+  end
   namespace :user do
     get 'posts/index'
     get 'posts/show'
