@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :user do
+    get 'posts/index'
+    get 'posts/show'
+    get 'posts/new'
+    get 'posts/edit'
+  end
   # 顧客用
   # URL /users/sign_in ...
   devise_for :users,skip: [:passwords,], controllers: {
