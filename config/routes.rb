@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   root to: "homes#top"
   get '/guideline' => 'homes#guideline'
 
-  #namespaceでURL指定のパス、ファイル構成指定のパスに
+  #admin側（namespaceでURL指定のパス、ファイル構成指定のパスに）
   namespace :admin do
     resources :users, except: [:new, :create, :edit, :destroy]
     resources :posts, except: [:new, :create, :edit, :destroy]
@@ -26,20 +26,20 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update] do
     member do
-      get "unsubscribe"
-      patch "withdraw"
+      get "unsubscribe" #退会画面表示
+      patch "withdraw" #会員ステータスを退会へ変更
     end
 
     resource :relationships, only: [:create, :destroy] do
     collection do
-      get "followings"
-      get "followers"
+      get "followings" #フォローしている人一覧
+      get "followers" #フォローされている人一覧
     end
     end
   end
 
   resources :posts do
-    resource :favorites, only: [:create, :destroy]
-    resources :post_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy] #いいね機能
+    resources :post_comments, only: [:create, :destroy] #コメント機能
   end
 end

@@ -1,13 +1,13 @@
-<h2>Log in</h2>
+<h2>ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :登録メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@example.com" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :パスワード %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
@@ -19,8 +19,8 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "ログイン" %>
   </div>
 <% end %>
 
-<%= render "user/shared/links" %>
+<h4>新規会員登録は<%= link_to "こちら", new_user_registration_path %></h4>
