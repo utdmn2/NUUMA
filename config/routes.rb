@@ -24,22 +24,27 @@ Rails.application.routes.draw do
     resources :categories, except: [:new, :show, :destroy]
   end
 
-  resources :users, only: [:show, :edit, :update] do
-    member do
-      get "unsubscribe" #退会画面表示
-      patch "withdraw" #会員ステータスを退会へ変更
-    end
-
-    resource :relationships, only: [:create, :destroy] do
-    collection do
-      get "followings" #フォローしている人一覧
-      get "followers" #フォローされている人一覧
-    end
+  scope module: :user do
+    resources :posts do
+      resource :favorites, only: [:create, :destroy] #いいね機能
+      resources :post_comments, only: [:create, :destroy] #コメント機能
     end
   end
 
-  resources :posts do
-    resource :favorites, only: [:create, :destroy] #いいね機能
-    resources :post_comments, only: [:create, :destroy] #コメント機能
+  scope module: :user do
+    resources :users, only: [:show, :edit, :update] do
+      member do
+        get "unsubscribe" #退会画面表示
+        patch "withdraw" #会員ステータスを退会へ変更
+      end
+
+    resource :relationships, only: [:create, :destroy] do
+      collection do
+        get "followings" #フォローしている人一覧
+        get "followers" #フォローされている人一覧
+      end
+    end
+    end
+
   end
 end
