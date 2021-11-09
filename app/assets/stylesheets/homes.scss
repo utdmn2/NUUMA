@@ -1,3 +1,27 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.guideline {
+  background-color: #f0f8ff;
+  padding: 40px;
+}
+.guideline h3 {
+  margin: 30px 0 20px 0;
+}
+
+.guideline p {
+  margin: 20px 0;
+}
+
+.guideline li {
+  margin-top: 10px;
+}
+
+.main-visual {
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
+  background-size: cover; 
+  background-position: center;
+}

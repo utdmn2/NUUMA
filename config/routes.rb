@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   #top
   root to: "homes#top"
   get '/guideline' => 'homes#guideline'
+  get '/privacy' => 'homes#privacy'
 
   #admin側（namespaceでURL指定のパス、ファイル構成指定のパスに）
   namespace :admin do

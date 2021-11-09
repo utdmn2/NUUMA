@@ -1,2 +1,18 @@
-<h1>User::Posts#show</h1>
-<p>Find me in app/views/user/posts/show.html.erb</p>
+<div class="card w-100 mx-auto mt-4 shadow-lg">
+<%= attachment_image_tag @post, :image, :fill, 300, 200 %>
+<div class="card-body">
+  <div class="card-title">
+<%= @post.title %>
+<%= link_to "記事編集", edit_post_path, class: "btn btn-primary btn-sm" %>
+<%= link_to "記事削除", post_path, method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger btn-sm" %>
+</div>
+<%#= @post.category %>
+<div class="card-text">
+<%= @post.body %>
+</div>
+<%= link_to user_path(@user) do %>
+<%#= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+<%= @user.name %>
+<% end %>
+<%= @post.created_at.strftime('%Y/%m/%d %H:%M:%S') %>投稿
+</div>
