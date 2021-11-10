@@ -1,17 +1,23 @@
+<div class="main">
+<h3>マイページ</h3>
+  <div class="row">
+      <div class="col"></div>
+    <div class="col-2">
+        <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+    </div>
+        <div class="col-8">
 
-<h1>マイページ</h1>
+          <h5>ニックネーム</h5>
+            <%= @user.name %>
+          <h5>自己紹介</h5>
+            <%= @user.introduction %>
+          <h5>メールアドレス</h5>
+            <%= @user.email %>
+          <h5>誕生日</h5>
+            <%= @user.birth_date %>
 
-<%= link_to "プロフィールを編集する", edit_user_path, class: "btn btn-success" %>
-<div class="image">
-<%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+        <%= link_to "プロフィールを編集する", edit_user_path, class: "btn btn-success" %>
+      </div>
+    <div class="col"></div>
+  </div>
 </div>
-<h3>ニックネーム</h3>
-<%= @user.name %>
-<h3>自己紹介</h3>
-<%= @user.introduction %>
-<h3>メールアドレス</h3>
-<%= @user.email %>
-<h3>誕生日</h3>
-<%= @user.birth_date %>
-
-

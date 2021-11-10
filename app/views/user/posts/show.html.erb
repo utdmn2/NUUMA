@@ -1,5 +1,7 @@
 <div class="card w-100 mx-auto mt-4 shadow-lg">
-<%= attachment_image_tag @post, :image, :fill, 300, 200 %>
+    <div class="post-img">
+<%= attachment_image_tag @post, :image, :fill, 200, 100 %>
+</div>
 <div class="card-body">
   <div class="card-title">
 <%= @post.title %>
@@ -15,4 +17,5 @@
 <%= @user.name %>
 <% end %>
 <%= @post.created_at.strftime('%Y/%m/%d %H:%M:%S') %>投稿
+</div>
 </div>
