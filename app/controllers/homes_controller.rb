@@ -8,5 +8,8 @@ class HomesController < ApplicationController
 
   def privacy
   end
+  
+  def post_rule
+  end
 
 end

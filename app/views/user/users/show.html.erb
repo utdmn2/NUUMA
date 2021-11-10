@@ -1,7 +1,9 @@
+
 <h1>マイページ</h1>
+
 <%= link_to "プロフィールを編集する", edit_user_path, class: "btn btn-success" %>
 <div class="image">
-<%= attachment_image_tag @user, :profile_image, :fill, 10, 10, format: 'jpeg', fallback: "no_image.jpg"%>
+<%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
 </div>
 <h3>ニックネーム</h3>
 <%= @user.name %>
@@ -11,3 +13,5 @@
 <%= @user.email %>
 <h3>誕生日</h3>
 <%= @user.birth_date %>
+
+
