@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <script src="https://kit.fontawesome.com/*******.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/35d3da8b06.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
     <div id="header" class="sticky-top">
       <nav class="navbar navbar-expand-lg text-light" >
         <div class="container">
-          <%= link_to "NUUMA", root_path %>
+          <%= link_to image_tag("logo.png", size: "140x100"), root_path %>
           <div class="navbar navbar-dark">
             <div class="container d-flex justify-content-between">
               <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,22 +29,22 @@
 
             <% if admin_signed_in? %>
               <li class="nav-item">
-                <%= link_to admin_users_path, class: "nav-link text-light" do %>
+                <%= link_to admin_users_path, class: "nav-link text-dark" do %>
                 会員一覧
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to admin_posts_path, class: "nav-link text-light" do %>
+                <%= link_to admin_posts_path, class: "nav-link text-dark" do %>
                 投稿一覧
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to admin_categories_path, class: "nav-link text-light" do %>
+                <%= link_to admin_categories_path, class: "nav-link text-dark" do %>
                 カテゴリ一覧
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to destroy_admin_session_path, class: "nav-link text-light", method: :delete do %>
+                <%= link_to destroy_admin_session_path, class: "nav-link text-dark", method: :delete do %>
                 ログアウト
                 <% end %>
               </li>
@@ -52,22 +52,22 @@
               <!--会員側ログイン後メニュー-->
             <% elsif user_signed_in? %>
               <li class="nav-item">
-                <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
+                <%= link_to user_path(current_user.id), class: "nav-link text-dark" do %>
                 マイページ
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to new_post_path, class: "nav-link text-light" do %>
+                <%= link_to new_post_path, class: "nav-link text-dark" do %>
                 投稿する
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to posts_path, class: "nav-link text-light" do %>
+                <%= link_to posts_path, class: "nav-link text-dark" do %>
                 投稿一覧
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to destroy_user_session_path, class: "nav-link text-light", method: :delete do %>
+                <%= link_to destroy_user_session_path, class: "nav-link text-dark", method: :delete do %>
                 ログアウト
                 <% end %>
               </li>
@@ -75,17 +75,17 @@
               <!-- 会員側ログイン前メニュー -->
             <% else %>
               <li class="nav-item">
-                <%= link_to posts_path, class: "nav-link text-light" do %>
+                <%= link_to posts_path, class: "nav-link text-dark" do %>
                 投稿一覧
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
+                <%= link_to new_user_registration_path, class: "nav-link text-dark" do %>
                 新規会員登録
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to new_user_session_path, class: "nav-link test-light" do %>
+                <%= link_to new_user_session_path, class: "nav-link text-dark" do %>
                 ログイン
                 <% end %>
               </li>
@@ -95,7 +95,7 @@
             </ul>
             <form class="d-flex">
               <input class="ml-2 form-control me-2" type="search" placeholder="沼を検索" aria-label="Search">
-              <button class="btn btn-outline-light ml-2" type="submit">
+              <button class="btn btn-outline-dark ml-2" type="submit">
                 <i class="fas fa-search">Search</i>
               </button>
             </form>
