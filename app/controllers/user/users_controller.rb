@@ -4,7 +4,7 @@ class User::UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.reverse_order
   end
-  
+
   def edit
     @user = current_user
   end
@@ -29,9 +29,9 @@ class User::UsersController < ApplicationController
     reset_session
     redirect_to root_path
   end
-  
+
   private
-    def user_params 
-      params.require(:user).permit(:name, :profile_image_id, :introduction, :birth_date, :is_deleted)
+    def user_params
+      params.require(:user).permit(:name, :profile_image, :introduction, :birth_date, :is_deleted)
     end
 end

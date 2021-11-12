@@ -1,7 +1,7 @@
-<h1>マイページ</h1>
+<h1>プロフィール編集</h1>
 
 <%= form_with model:@user, local:true do |f| %>
-
+　<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
   <label for="inputImage">プロフィール画像</label>
   <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
 
