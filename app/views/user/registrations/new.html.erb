@@ -1,16 +1,18 @@
 <%= render 'homes/alert' %>
 <div class="form">
 
-  <h3 style="text-align: center; margin: 20px;">新規会員登録</h3>
-    <div class="row">
-      <div class="col"></div>
+  <div class="row">
+    <div class="col"></div>
       <div class="col">
-        
+
+        <h3 style="margin: 20px;">新規会員登録</h3>
+
+
       <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
       <%= render "user/shared/error_messages", resource: resource %>
 
-  　　　　　　　<div class="field">
-    　　　　　　<%= f.label :ニックネーム, class: "mt-3 mr-5" %><br>
+          <div class="field">
+            <%= f.label :ニックネーム, class: "mt-3 mr-5" %><br  />
             <%= f.text_field :name, autofocus: true, placeholder: "ぬまぬし", size: "30" %>
           </div>
 
@@ -20,7 +22,7 @@
           </div>
 
           <div class="field">
-            <%= f.label :パスワード（８文字以上）, class: "mt-3 mr-5" %><br />
+            <%= f.label :パスワード（６文字以上）, class: "mt-3 mr-5" %><br />
             <%= f.password_field :password, autocomplete: "new-password", size: "30" %>
           </div>
 
@@ -28,16 +30,15 @@
              <%= f.label :パスワード（確認）, class: "mt-3 mr-5" %><br />
               <%= f.password_field :password_confirmation, autocomplete: "new-password", size: "30" %>
     　　　　　</div>
-        </div>
-      <div class="col"></div>
-    </div>
-    
-    <div style="text-align: center;" class="field">
+
+
+
+    <div class="field">
       <p><%= f.check_box :agreement_terms, :as => :boolean, checked: false, class: "my-4" %>
-          <%= link_to "利用規約", guideline_path %>と<%= link_to "プライバシーポリシー", privacy_path %> に同意する。</p>
+          <%= link_to "利用規約", guideline_path %>と<%= link_to "プライバシーポリシー", privacy_path %> に同意する</p>
     </div>
 
-    <div style="text-align: center;" class="actions">
+    <div class="actions">
           <%= f.submit "新規登録", class: "btn btn-success" %>
     </div>
   <% end %>
@@ -46,5 +47,7 @@
     <p style="text-align: center; margin: 30px auto;">
       すでに会員の方は<%= link_to "こちら", new_user_session_path %>からログイン
     </p>
-    
-</div>
+
+      </div>
+    <div class="col"></div>
+  </div>
