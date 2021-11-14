@@ -32,18 +32,10 @@
       <span><%= @post.created_at.strftime('%Y/%m/%d') %>  |</span>
       <span><i class="fa fa-comment"> <%= @post.post_comments.count %> </i></span>
 
-      <% if @post.favorited_by?(current_user) %>
-    <p><%= link_to post_favorites_path(@post), method: :delete do %>
-      ♥<%= @post.favorites.count %>
-      <% end %>
-    </p>
-    <% else %>
-    <p>
-         <%= link_to post_favorites_path(@post), method: :post do %>
-        ♡<%= @post.favorites.count %>
-      <% end %>
-    </p>
-  <% end %>
+    <div class="favorite-btn_<%= @post.id %>">
+      <%= render 'user/favorites/favorite', post: @post %>
+    </div>
+
     </div>
   <hr>
 
