@@ -30,7 +30,9 @@
 
     <div style="text-align: right;">
       <span><%= @post.created_at.strftime('%Y/%m/%d') %>  |</span>
-      <span><i class="fa fa-comment"> <%= @post.post_comments.count %> </i></span>
+      <span>
+      <div class="comment-count"><%= render 'user/post_comments/count', post: @post %>
+      </div></span>
 
     <div class="favorite-btn_<%= @post.id %>">
       <%= render 'user/favorites/favorite', post: @post %>
@@ -40,33 +42,13 @@
   <hr>
 
   <!--コメント機能-->
+    <div class="comments_area">
+      <%= render 'user/post_comments/index', post: @post %>
+    </div>
+
     <div>
-      <% @post.post_comments.each do |post_comment| %>
-        <%= link_to user_path(post_comment.user) do %>
-        <%= attachment_image_tag post_comment.user, :profile_image, fallback: "no_image.jpg", size: '50x50' %>
-          <%= post_comment.user.name %>
-        <% end %>
-          <%= post_comment.comment %><br>
-          <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+      <%= render 'user/post_comments/form', post: @post, post_comment: @post_comment %>
 
-          <% if post_comment.user == current_user %>
-            <%= link_to post_post_comment_path(post_comment.post, post_comment), method: :delete do %>
-              <i class="fas fa-trash-alt" style="color: gray;"></i>
-            <% end %>
-          <% end %>
-         <hr>
-       <% end %>
-      </div>
-
-      <div>
-        <%= form_with(model:[@post, @post_comment], local: true) do |f| %>
-          <%= f.text_area :comment, placeholder: "コメント", size: "40" %>
-          <%= f.submit "送信", class: "btn btn-success btn-sm" %>
-        <% end %>
-      </div>
-
-
-
-
-</div>
+    </div>
+  </div>
 </div>

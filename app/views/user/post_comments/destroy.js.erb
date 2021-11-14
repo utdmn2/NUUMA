@@ -1,0 +1,2 @@
+$(".comments_area").html("<%= j(render 'user/post_comments/index', post: @post ) %>");
+$(".comment-count").html("<%= j(render 'user/post_comments/count', post: @post ) %>");

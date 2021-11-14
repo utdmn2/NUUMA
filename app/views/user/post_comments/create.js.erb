@@ -1,0 +1,5 @@
+<!--id="comments_formをrenderで指定した部分テンプレートに更新-->
+$(".comments_area").html("<%= j(render 'user/post_comments/index', post: @post ) %>");
+$(".comment-count").html("<%= j(render 'user/post_comments/count', post: @post ) %>");
+<!--フォーム送信後、テキストエリアを空にする-->
+$("#post_comment_comment").val('');
