@@ -36,13 +36,16 @@
     <div>
       <% @post.post_comments.each do |post_comment| %>
         <%= attachment_image_tag post_comment.user, :profile_image, fallback: "no_image.jpg", size: '50x50' %>
-          <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
           <%= post_comment.user.name %>
-        <hr>
-      <% end %>
-      <%# if @post_comment.user == current_user %>
-      <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
-      <%# end %>
+          <%= post_comment.comment %>
+          <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+
+          <% if post_comment.user == current_user %>
+            <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
+          <% end %>
+       <hr>
+       <% end %>
+
       </div>
       <div>
         <%= form_with(model:[@post, @post_comment], local: true) do |f| %>
