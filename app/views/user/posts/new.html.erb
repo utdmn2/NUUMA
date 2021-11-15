@@ -1,19 +1,36 @@
-<div class="shadow p-3 mb-5 bg-white rounded">
-  <h1>新規投稿フォーム</h1>
-    <%= form_with model: @post, local:true do |f| %>
-      <%= f.label :image, '画像' %>
-      <%= f.attachment_field :image %>
-      <%= f.label :body, 'タイトル' %>
-      <%= f.text_field :title, placeholder: "〇〇沼" %>
-      <%= f.label :category, 'カテゴリ' %>
-      <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
-      <%= category.label do %>
-      <%= category.check_box %>
-      <%= category.text %>
-      <% end %>
-      <% end %>
-      <h4>本文</h4>
-      <%= f.text_area :body, pleceholder: "控えめに言って最高！" %>
-    <%= f.submit '投稿', class: "btn btn-lg btn-block btn-info" %>
-    <% end %>
+<div class="form">
+  <div class="row">
+    <div class="col"></div>
+      <div class="col">
+        <h3 style="margin: 20px;"><i class="fas fa-pen"></i>  新規投稿</h3>
+          <%= form_with model: @post, local:true do |f| %>
+
+          <p>
+            <%= f.label :image, '画像' %>
+            <%= f.attachment_field :image %>
+          </p>
+          <p>
+            <%= f.label :body, 'タイトル' %>
+            <%= f.text_field :title, placeholder: "〇〇沼" %>
+          </p>
+          <p>
+            <%= f.label :category, 'カテゴリ' %>
+            <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
+            <%= category.label do %>
+              <%= category.check_box %>
+              <%= category.text %>
+            <% end %>
+            <% end %>
+          </p>
+
+            <div><%= f.label :body, '本文' %></div>
+            <p><%= f.text_area :body, size: "50x10", pleceholder: "控えめに言って最高！" %>
+          </p>
+
+              <%= f.submit '投稿', class: "btn btn-success mb-2" %>
+
+          <% end %>
+      </div>
+    <div class="col"></div>
+  </div>
 </div>
