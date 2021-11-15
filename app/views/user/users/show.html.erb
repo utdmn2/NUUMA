@@ -1,30 +1,37 @@
 <div class="main">
-<h3>マイページ</h3>
+
   <div class="row">
-      <div class="col"></div>
-    <div class="col-2">
-        <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
-    </div>
-        <% if @user != current_user %>
-        <%# if current_user.following?(@user) %>
-        <%= link_to "フォローを外す", user_relationships_path(@user.id), method: :delete, class: "btn btn-info btn-sm" %>
-        <% else %>
-        <%= link_to "フォローする", user_relationships_path(@user.id), method: :post, class: "btn btn-success btn-sm" %>
-        <% end %>
-      <%# end %>
-        <div class="col-8">
-
-          <h5>ニックネーム</h5>
-            <%= @user.name %>
-          <h5>自己紹介</h5>
-            <%= @user.introduction %>
-          <h5>メールアドレス</h5>
-            <%= @user.email %>
-          <h5>誕生日</h5>
-            <%= @user.birth_date %>
-
-        <%= link_to "プロフィールを編集する", edit_user_path, class: "btn btn-success" %>
-      </div>
     <div class="col"></div>
+
+      <div class="col-auto">
+        <h3 style="margin: 20px;"><i class="far fa-address-card"></i> マイページ</h3>
+
+        <div style="text-align: center; margin: 20px;">
+
+        <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+        <%# if @user != current_user %>
+        <%# if current_user.following?(@user) %>
+        <%#= link_to "フォローを外す", user_relationships_path(@user.id), method: :delete, class: "btn btn-info btn-sm" %>
+        <%# else %>
+        <%# end %>
+      <%# end %>
+      </div>
+
+          <p>ニックネーム：
+            <%= @user.name %></p>
+          <p>自己紹介：
+            <%= @user.introduction %></p>
+          <p>メールアドレス：
+            <%= @user.email %></p>
+          <p>誕生日：
+            <%= @user.birth_date %></p>
+
+      <div style="margin: 10px auto;">
+        <%= link_to edit_user_path, class: "btn btn-success btn-block" do %>
+          <i class="fas fa-user-cog"></i>
+        <% end %>
+        </div>
+      </div>
+      <div class="col"></div>
   </div>
 </div>
