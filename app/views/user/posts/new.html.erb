@@ -24,8 +24,9 @@
           </p>
 
             <div><%= f.label :body, '本文' %></div>
-            <p><%= f.text_area :body, size: "50x10", pleceholder: "控えめに言って最高！" %>
-          </p>
+            <p>
+              <%= f.text_area :body, size: "50x10", pleceholder: "控えめに言って最高！" %>
+            </p>
 
               <%= f.submit '投稿', class: "btn btn-success mb-2" %>
 
