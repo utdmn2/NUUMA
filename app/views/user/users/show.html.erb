@@ -26,11 +26,13 @@
           <p>誕生日：
             <%= @user.birth_date %></p>
 
+    <% if @user == current_user %>
       <div style="margin: 10px auto;">
         <%= link_to edit_user_path, class: "btn btn-success btn-block" do %>
           <i class="fas fa-user-cog"></i>
         <% end %>
-        </div>
+      </div>
+    <% end %>
       </div>
       <div class="col"></div>
   </div>

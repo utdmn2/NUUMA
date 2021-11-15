@@ -3,10 +3,11 @@
      <table class="table">
       <thead>
        <tr>
-        <th scope="col">登録ID</th>
+        <th scope="col">会員ID</th>
         <th scope="col"></th>
         <th scope="col">ニックネーム</th>
-        <th scope="col"></th>
+        <th scope="col">メールアドレス</th>
+        <th scope="col">ステータス</th>
         <th scope="col"></th>
        </tr>
      </thead>
@@ -18,10 +19,13 @@
         <td><%= user.id %></td>
         <td><%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg", size: "30x30" %></td>
         <td><p><%= user.name %></p></td>
-        <td>フォロー数：<%= user.followings.count %></td>
-        <td>フォロワー数: <%= user.followers.count %></td>
-
-        <td><p><%= link_to "詳細",user_path(user.id) %></p></td>
+        <td><%= user.email %></td>
+        <% if user.is_deleted == false %>
+          <td><strong><p class="text-success">有効</p></strong></td>
+        <% else %>
+          <td><strong><p class="text-secondary">退会</p></strong></td>
+        <% end %>
+        <td><p><%= link_to "詳細",admin_user_path(user.id) %></p></td>
       </tr>
         <% end %>
      </tbody>
