@@ -1,4 +1,4 @@
-<h1>新着投稿一覧</h1>
+<h3>新着投稿一覧</h3>
 <% @posts.each do |post| %>
 <%= attachment_image_tag post, :image, :fill, 30, 20 %>
 <%= link_to post.title, post_path(post.id) %>
