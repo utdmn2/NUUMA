@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, except: [:new, :create, :edit, :destroy]
     resources :posts, except: [:new, :create, :edit, :destroy]
-    resources :categories, except: [:new, :show, :destroy]
+    resources :categories, except: [:new, :show, :update]
   end
 
   scope module: :user do
@@ -49,7 +49,7 @@ Rails.application.routes.draw do
       end
     end
     end
-    
+
     resource :searches, only: [:search] do
       get "search"
     end
