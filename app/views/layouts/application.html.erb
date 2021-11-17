@@ -94,18 +94,12 @@
             <!-- 検索窓　-->
             </ul>
             <form class="d-flex">
-
-            <%= form_with url:'/searches/search', method: :get, local: true do |f| %>
-            　<%= f.select 'range' ,options_for_select([ ['ユーザー', '1'], ['投稿', '2']]) %>
-            　<%= f.select 'search', options_for_select([["前方一致","forward_match"], ["後方一致","backward_match"], ["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
-            　<%= f.text_field :word %>
-            　<%= f.submit '検索', class: 'btn btn-outline-dark ml-2' %>
+              <%= form_with url:'/searches/search', method: :get, local: true do |f| %>
+            　  <%= f.select 'range' ,options_for_select([ ['ユーザー', '1'], ['投稿', '2']]) %>
+            　  <%= f.select 'search', options_for_select([["前方一致","forward_match"], ["後方一致","backward_match"], ["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
+            　  <%= f.text_field :word %>
+            　  <%= f.submit '検索', class: 'btn btn-outline-dark ml-2' %>
             　<% end %>
-
-            <!--  <input class="ml-2 form-control me-2" type="search" placeholder="沼を検索" aria-label="Search">-->
-            <!--  <button class="btn btn-outline-dark ml-2" type="submit">-->
-            <!--    <i class="fas fa-search">Search</i>-->
-            <!--  </button>-->
             </form>
            </div>
          </div>
