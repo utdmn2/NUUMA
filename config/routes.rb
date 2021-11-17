@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get '/privacy' => 'homes#privacy'
   get '/post_rule' => 'homes#post_rule'
 
+  # get '/search' => 'user/searches#search'
+
   #admin側（namespaceでURL指定のパス、ファイル構成指定のパスに）
   namespace :admin do
     resources :users, except: [:new, :create, :edit, :destroy]
@@ -46,6 +48,10 @@ Rails.application.routes.draw do
         get "followers" #フォローされている人一覧
       end
     end
+    end
+    
+    resource :searches, only: [:search] do
+      get "search"
     end
 
   end
