@@ -6,6 +6,7 @@
       <div style="text-center: left; margin: 20px;">
 
       <%= form_with model:@user, local:true do |f| %>
+      <%= render 'layouts/errors', model: f.object %>
 　        <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "100x100"%>
       <table>
 　       <tr>
