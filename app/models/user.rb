@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   #新規登録チェックボックスvalidation
+  validates :name, presence: true, uniqueness: true, length: { maximum: 10 }
   validates :agreement_terms, allow_nil: false, acceptance: true, on: :create
   validates :email, presence: true, uniqueness: true
 

@@ -20,9 +20,9 @@
         <h4><%= @post.title %></h4>
       </div>
 
-      <% @post.categories.each do |category| %>
+      <p>カテゴリー:<% @post.categories.each do |category| %>
         <%= category.name %>
-      <% end %>
+      <% end %></p>
 
       <div class="card-text my-2">
         <%= @post.body %>
