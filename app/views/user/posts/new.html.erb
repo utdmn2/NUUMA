@@ -14,7 +14,7 @@
             <%= f.text_field :title, placeholder: "〇〇沼" %>
           </p>
           <p>
-            <%= f.label :category, 'カテゴリ' %>
+            <%= f.label :category, 'カテゴリ' %><br>
             <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %>
             <%= category.label do %>
               <%= category.check_box %>
