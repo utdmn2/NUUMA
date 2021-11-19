@@ -20,7 +20,7 @@
        <% end %>
       </td>
       <td>
-       <%= link_to post.title, , class: "post_#{post.id}" %>
+       <%= link_to post.title, post_path(post.id) %>
       </td>
       <td><%= truncate(post.body) %></td>
      </tr>

@@ -31,7 +31,7 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
-  #検索機能（ユーザネーム、記事タイトル）
+  #検索機能（ユーザネーム）
   def self.search(search,word)
     if search == "forward_match"
       @user = User.where("name LIKE?","#{word}%")
