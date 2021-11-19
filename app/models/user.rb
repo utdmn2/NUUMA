@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   #新規登録チェックボックスvalidation
   validates :name, presence: true, uniqueness: true, length: { maximum: 10 }
+  validates :introduction, length: { maximum: 100 }
   validates :agreement_terms, allow_nil: false, acceptance: true, on: :create
   validates :email, presence: true, uniqueness: true
 
