@@ -5,6 +5,7 @@ class User::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.reverse_order
+    @post = Post.find(params[:id])
   end
 
   def edit
