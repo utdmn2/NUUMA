@@ -45,7 +45,7 @@
         </td>
         <td><%= link_to post.title, post_path(post), class: "post_#{post.id}" %></td>
         <td><%= truncate(post.body) %></td>
-        <td>♥ <%= post.favorites.count %></td>
+        <td><div style="color: #ff1493;">♥ <%= post.favorites.count %></div></td>
       </tr>
     <% end %>
     </tbody>
