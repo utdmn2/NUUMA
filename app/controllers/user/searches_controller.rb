@@ -1,15 +1,14 @@
 class User::SearchesController < ApplicationController
 
   def search
-    @range = params[:range]
-    search = params[:search]
-    word = params[:word]
-
-  if @range == '1'
-     @user = User.search(search,word)
-  else
-    @post = Post.search(search,word)
-  end
+		@model = params[:model]
+		@content = params[:content]
+		@method = params[:method]
+		if @model == 'user'
+			@records = User.search_for(@content, @method)
+		else
+			@records = Post.search_for(@content, @method)
+		end
   end
 
 end
