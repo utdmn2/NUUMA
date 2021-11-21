@@ -63,14 +63,4 @@
 
   <hr>
 
-  <div class="row">
-    <div class="col"></div>
-    <div class="col-10">
-    <h3>投稿一覧</h3>
-      <div class="card-deck">
-        <%= render 'user/users/card', posts: @posts, post: @post %>
-      </div>
-    </div>
-    <div class="col"></div>
-  </div>
-</div>
+    <%= render 'user/users/card', posts: @posts, post: @post %>
