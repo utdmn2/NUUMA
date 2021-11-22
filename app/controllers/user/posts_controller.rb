@@ -1,5 +1,4 @@
 class User::PostsController < ApplicationController
-
   def index
     @posts = Post.page(params[:page]).per(10)
   end
@@ -18,28 +17,26 @@ class User::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-    flash[:notice] = "記事を投稿しました！"
-    redirect_to post_path(@post)
+      flash[:notice] = '記事を投稿しました！'
+      redirect_to post_path(@post)
     else
-    render :new
+      render :new
     end
   end
 
   def edit
     @post = Post.find(params[:id])
-      if @post.user != current_user
-        redirect_to posts_path
-      end
+    redirect_to posts_path if @post.user != current_user
   end
 
   def update
     @post = Post.find(params[:id])
-      if @post.update(post_params)
-        flash[:notice] = "記事を更新しました！"
-        redirect_to post_path(@post.id)
-      else
-        render :edit
-      end
+    if @post.update(post_params)
+      flash[:notice] = '記事を更新しました！'
+      redirect_to post_path(@post.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -48,8 +45,8 @@ class User::PostsController < ApplicationController
     redirect_to user_path(post.user_id)
   end
 
-
   private
+
   def post_params
     params.require(:post).permit(:title, :body, :image, category_ids: [])
   end

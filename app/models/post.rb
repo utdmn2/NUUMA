@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
-
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :post_category_relations
@@ -14,11 +13,11 @@ class Post < ApplicationRecord
     if method == 'perfect'
       Post.where(title: content)
     elsif method == 'forward'
-      Post.where('title LIKE ?', content+'%')
+      Post.where('title LIKE ?', content + '%')
     elsif method == 'backward'
-      Post.where('title LIKE ?', '%'+content)
+      Post.where('title LIKE ?', '%' + content)
     else
-      Post.where('title LIKE ?', '%'+content+'%')
+      Post.where('title LIKE ?', '%' + content + '%')
     end
   end
 
@@ -26,7 +25,5 @@ class Post < ApplicationRecord
   validates :body, presence: true, length: { maximum: 1000 }
   validates :category_ids, presence: true
 
-
   attachment :image
-
 end

@@ -24,4 +24,3 @@ module Nuuma
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'models', '*2.yml').to_s]
   end
 end
-

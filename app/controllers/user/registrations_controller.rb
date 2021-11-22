@@ -69,11 +69,12 @@ class User::RegistrationsController < Devise::RegistrationsController
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :agreement_terms])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name agreement_terms])
   end
-    private
 
-  def after_sign_up_path_for(resource)
+  private
+
+  def after_sign_up_path_for(_resource)
     root_path
   end
 end

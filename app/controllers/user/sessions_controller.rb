@@ -30,11 +30,9 @@ class User::SessionsController < Devise::SessionsController
 
   def user_state
     @user = User.find_by(email: params[:user][:email])
-    if @user
-      if (@user.valid_password?(params[:user][:password]) && (@user.is_deleted? == true))
-        flash[:danger] = "登録のないユーザーです"
-        redirect_to new_user_registration_path
-      end
+    if @user && @user.valid_password?(params[:user][:password]) && (@user.is_deleted? == true)
+      flash[:danger] = '登録のないユーザーです'
+      redirect_to new_user_registration_path
     end
   end
 end
