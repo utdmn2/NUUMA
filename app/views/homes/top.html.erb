@@ -1,3 +1,5 @@
+<div class="top">
+<div class="container py-5">
 <div id="box">
   <div id="images">
     <div class="nuuman"></div>
@@ -10,26 +12,28 @@
     <div class="image6"></div>
   </div>
 </div>
-
 </div>
 <div class="container">
-  <div class="row">
-    <div class="col-md-4  img-hidden">
-      <!--<img src="image/c.jpg" alt="img" class="img-fulied">-->
+  <div class="row my-5">
+    <div class="col-md-4">
+      <%= image_tag 'whats.png', size: "280x280" %>
     </div>
-    <div class="col-md-8">
-      <h1>あなたの「好き！」を語ろう</h1>
-      <p>NUUME（ぬーま）は、友だちやまだ見ぬ同志とのコミュニケーションの場を提供するSNSです。
-      写真共有・記事投稿を通して自分の好きな「もの」「こと」を熱く語ろう。
-      新しい同志を見つけたり、今まで知らなかったディープな世界を覗いたり。みんなの「好き」で世界を楽しく！</p>
+    <div class="col-md-8 py-3">
+      <h1 class="my-2">あなたの「好き！」を語ろう</h1>
+      <p>NUUME（ぬーま)は、<br>写真共有・記事投稿を通して自分の好きな「もの」「こと」について心ゆくまで語る<br>
+      コミュニティサイトです。<br>
+      共通の趣味の人をフォローしたり、今まで知らなかったディープな世界を覗いたり。<br>
+      みんなの「好き」が溢れるNUUMAの世界を一緒に作ってみませんか？
     </div>
   </div>
 </div>
 
-
-<div class="container container-m">
+<div class="container">
+  <div class="row py-5">
   <h3>新着投稿</h3>
     <div class="card-deck">
       <%= render 'homes/card', posts: @posts %>
     </div>
+  </div>
+</div>
 </div>
