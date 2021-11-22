@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   # admin側（namespaceでURL指定のパス、ファイル構成指定のパスに）
   namespace :admin do
     resources :users, except: %i[new create edit destroy]
-    resources :posts, except: %i[new create edit destroy]
+    resources :posts, except: %i[new create edit update]
     resources :categories, except: %i[new show update]
   end
 

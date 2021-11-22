@@ -1,19 +1,39 @@
-<div class="row">
-  <div class="col"></div>
-    <div class="col-auto">
-      <h3 style="margin: 20px; text-align: center;">会員詳細</h3>
-        <div style="text-align: center; margin: 20px;">
+<div class="main">
+
+  <div class="row">
+    <div class="col"></div>
+      <div class="col-5">
+        <h3 style="margin: 20px;"><i class="far fa-address-card"></i> ユーザー詳細</h3>
+        <div style="margin: 20px;">
           <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
         </div>
+        <div>
+          <%= link_to followings_user_relationships_path(@user.id), class: "btn mb-2", style: "color: #6EC388;" do %>
+            <%= @user.followings.count %> フォロー
+          <% end %>
+          <%= link_to followers_user_relationships_path(@user.id), class: "btn  mb-2", style: "color: #6EC388;" do %>
+            <%= @user.followers.count %> フォロワー
+          <% end %>
+        </div>
 
-        <p>ニックネーム：
-            <%= @user.name %></p>
-          <p>自己紹介：
-            <%= @user.introduction %></p>
-          <p>メールアドレス：
-            <%= @user.email %></p>
-          <p>誕生日：
-            <%= @user.birth_date %></p>
+      <table class="profile">
+        <tr>
+          <th width="150">ニックネーム</th>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th>自己紹介</th>
+          <td><%= @user.introduction %></td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <th>誕生日</th>
+          <td><%= @user.birth_date %></td>
+        </tr>
+      </table>
 
           <%= form_with model:@user, url: "/admin/users/#{@user.id}", local:true do |f| %>
           <p>会員ステータス</p>
@@ -21,8 +41,9 @@
                 <%= f.label :is_deleted, "有効", value: false %>
                 <%= f.radio_button :is_deleted, true %>
                 <%= f.label :is_deleted, "無効", value: true %>
-                <%= f.submit '変更を保存',class:"btn btn-success" %>
+                <%= f.submit '変更を保存',class:"btn btn-success ml-5" %>
           <% end %>
-           </div>
-        <div class="col"></div>
       </div>
+    <div class="col"></div>
+  </div>
+</div>
