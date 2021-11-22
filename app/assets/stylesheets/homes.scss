@@ -19,19 +19,43 @@
   margin-top: 10px;
 }
 
-.main-visual {
-  width: 100%; /* 横幅いっぱい */
-  height: 500px; /* 高さ500px */
-  margin: 20px auto;
-  background-image: image-url("numan.jpg");
-  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
-  background-position: center; /* 背景画像を中央に配置 */
+// .main-visual {
+//   width: 100%; /* 横幅いっぱい */
+//   height: 800px; /* 高さ500px */
+//   margin: 20px auto;
+//   background-image: image-url("numan.png");
+//   background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
+//   background-position: center; /* 背景画像を中央に配置 */
+// }
+
+#box{
+  width: 640px;
+  height: 479px;
 }
 
-.about {
-  background-image: url(question.png);
-  background-size: cover;
-  background-position: center;
+.nuuman {
+  background-image: url(nuuman.png);
+}
+.image0 {
+  background-image: url(image0.jpg);
+}
+.image1 {
+  background-image: url(image1.jpg);
+}
+.image2 {
+  background-image: url(image2.jpg);
+}
+.image3 {
+  background-image: url(image3.jpg);
+}
+.image4 {
+  background-image: url(image4.jpg);
+}
+.image5 {
+  background-image: url(image5.jpg);
+}
+.image6 {
+  background-image: url(image6.jpg);
 }
 
 .profile_image {

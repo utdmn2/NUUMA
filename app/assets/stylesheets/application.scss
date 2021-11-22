@@ -17,12 +17,16 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+.body {
+  background-image: image-url("pattern.jpg");
+}
+
 .navbar {
-  background-color: #FBE929;
+  background-color: #FCE38A;
 }
 
 footer {
-  background-color: #FBE929;
+  background-color: #FCE38A;
 }
 
 .main {
