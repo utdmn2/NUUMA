@@ -5,12 +5,12 @@ class Post < ApplicationRecord
   has_many :post_category_relations
   has_many :categories, through: :post_category_relations
 
-  #いいね機能
+  # いいね機能
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
-  
-  #検索機能
+
+  # 検索機能
   def self.search_for(content, method)
     if method == 'perfect'
       Post.where(title: content)
@@ -22,16 +22,16 @@ class Post < ApplicationRecord
       Post.where('title LIKE ?', '%' + content + '%')
     end
   end
-  
-  #投稿一覧ソート機能
+
+  # 投稿一覧ソート機能
   def self.sort(selection)
     case selection
     when 'new'
-      return all.order(created_at: :DESC)
+      all.order(created_at: :DESC)
     when 'old'
-      return all.order(created_at: :ASC)
+      all.order(created_at: :ASC)
     when 'likes'
-      return all.find(Favorite.group(:post_id).order(Arel.sql('count(post_id) desc')).pluck(:post_id))
+      all.find(Favorite.group(:post_id).order(Arel.sql('count(post_id) desc')).pluck(:post_id))
     end
   end
 

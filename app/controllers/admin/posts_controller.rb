@@ -15,7 +15,6 @@ class Admin::PostsController < ApplicationController
     redirect_to admin_user_path(post.user_id)
   end
 
-
   private
 
   def post_params
