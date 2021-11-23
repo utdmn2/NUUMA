@@ -1,21 +1,13 @@
 <div class="container">
+
   <h3 style="margin: 20px;">
     <i class="fas fa-ghost"></i>  投稿一覧
   </h3>
-
+  <form>
   <%= form_with model: @post, url: sort_path, method: :get, local: true do |f| %>
   <%= f.select :keyword, options_for_select({ "投稿が新しい順" => "new", "投稿が古い順" => "old", "いいねが多い順" => "likes" }) %>
   <%= f.submit '並び替え' %>
   <% end %>
-
-  <%= render 'user/users/card', posts: @posts, post: @post %>
-
-  <div class="row">
-    <div class="col"></div>
-    <div class="col-auto">
-      　<%= paginate @posts %>
-    </div>
-    <div class="col"></div>
-  </div>
+  </form>
+  <%= render 'user/users/card', posts: @posts %>
 </div>
-

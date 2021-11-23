@@ -22,5 +22,9 @@ module Nuuma
     config.i18n.load_path += Dir[Rails.root.join('config/locales/*.yml').to_s]
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'models', '*.yml').to_s]
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'models', '*2.yml').to_s]
+
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+  html_tag
+  end
   end
 end

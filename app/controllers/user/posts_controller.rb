@@ -1,6 +1,6 @@
 class User::PostsController < ApplicationController
   def index
-    @posts = Post.page(params[:page]).per(10)
+    @posts = Post.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def show
@@ -43,6 +43,11 @@ class User::PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     redirect_to user_path(post.user_id)
+  end
+
+  def sort
+    selection = params[:keyword]
+    @posts = Post.sort(selection)
   end
 
   private

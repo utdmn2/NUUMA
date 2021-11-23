@@ -14,26 +14,28 @@
 </div>
 </div>
 <div class="container">
-  <div class="row my-5">
+  <div class="row mt-5">
     <div class="col-md-4">
       <%= image_tag 'whats.png', size: "280x280" %>
     </div>
     <div class="col-md-8">
-      <div class="main-text" style="background-color: #EAFFD0; border-radius: 20px;">
+      <div class="main-text" style="background-color: #FFF; border-radius: 20px; text-align: center;">
       <h2 style="padding: 20px 20px 0;">あなたの「好き！」を語ろう</h2>
-      <p style="padding: 20px 20px;">NUUME（ぬーま)は、写真共有・記事投稿を通して自分の好きな「もの」「こと」について<br>心ゆくまで語る
-      コミュニティサイトです。<br>
+      <p style="padding: 20px 20px;">NUUME（ぬーま)は、写真共有・記事投稿を通して<br>
+      自分の好きな「もの」「こと」について心ゆくまで語るコミュニティサイトです。<br>
       共通の趣味の人をフォローしたり、今まで知らなかったディープな世界を覗いたり。<br>
-      みんなの「好き」が溢れるNUUMAの世界を一緒に作ってみませんか？</p>
+      みんなの「好き」が溢れるNUUMAの世界を一緒に作りましょう！</p>
       </div>
-      <%= link_to "会員登録して投稿＆みんなの投稿を見る>>>", new_user_registration_path, class: "btn btn-lg", style: "background-color: #F38181; color: white;" %>
+      <%= link_to "会員登録して投稿＆みんなの投稿を見る>>>", new_user_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg", style: "background-color: #F38181; color: white;" %>
     </div>
   </div>
 </div>
 
 <div class="container">
   <div class="row py-5">
-  <h3>新着投稿</h3>
+  <h2 style="margin-left: 20px; color: white;">
+    <i class="fas fa-ghost"></i>  新着投稿
+  </h2>
     <div class="card-deck">
       <%= render 'homes/card', posts: @posts %>
     </div>
