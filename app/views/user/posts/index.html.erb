@@ -1,12 +1,12 @@
-<%= render 'user/users/card', posts: @posts, post: @post %>
-   
-  <div class="row">
-     <div class="col"></div>
-     <div class="col-auto">
-      　<%= paginate @posts %>
-     </div>
-    <div class="col"></div>
-   </div>
-</div>
+<div class="container">
+  <%= render 'user/users/card', posts: @posts, post: @post %>
 
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-auto">
+      　<%= paginate @posts %>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
 

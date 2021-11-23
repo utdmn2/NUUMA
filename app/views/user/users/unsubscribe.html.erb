@@ -1,23 +1,28 @@
 <div class="container">
-       <div class="row">
-          <div class="mt-5 mx-auto col-11 col-sm-10 col-lg-8 col-xl-6 ">
-            <h4 class="text-center"><strong>本当に退会しますか？</strong></h4>
-          </div>
-       </div>
-       <div class="row">
-           <div class="mt-2 mx-auto col-11 col-sm-10 col-lg-8 col-xl-6 ">
-         <p class="text-center">退会すると、会員登録情報や<br>
-         これまでの購入履歴が閲覧できなくなります。<br>
-         退会する場合は、「退会する」をクリックしてください。</p>
-        </div>
-       </div>
+  <div class="row">
+    <div class="mt-5 mx-auto col-11 col-sm-10 col-lg-8 col-xl-6 ">
+      <h4 class="text-center"><strong>本当に退会しますか？</strong></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="mt-2 mx-auto col-11 col-sm-10 col-lg-8 col-xl-6 ">
+      <p class="text-center">
+        退会すると、会員登録情報や<br>
+        これまでの購入履歴が閲覧できなくなります。<br>
+        退会する場合は、「退会する」をクリックしてください。</p>
+    </div>
+  </div>
 
 
-      <div class="row">
-          <div class="col-3 mt-5"></div>
-          <div class="col-2 text-right"><%= link_to "退会しない",user_path(@user),class:"btn btn-dark" %></div>
-          <div class="col-2"></div>
-        <div class="col-2"><%= link_to "退会する", user_path, method: :delete,class:"btn btn-danger",data: { confirm: '退会する' } %></div>
-        <div class="col-3"></div>
+  <div class="row">
+    <div class="col-3"></div>
+      <div class="col-2 text-right my-3">
+        <%= link_to "退会しない",user_path(@user),class:"btn btn-dark" %>
       </div>
+      <div class="col-2"></div>
+      <div class="col-2 my-3 mb-5">
+        <%= link_to "退会する", user_path, method: :delete,class:"btn btn-danger",data: { confirm: '退会する' } %>
       </div>
+      <div class="col-3"></div>
+  </div>
+</div>
