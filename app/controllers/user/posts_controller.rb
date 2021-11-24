@@ -1,4 +1,5 @@
 class User::PostsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @posts = Post.order("created_at DESC").page(params[:page]).per(10)
   end

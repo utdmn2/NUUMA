@@ -19,7 +19,7 @@
     <div class="col-md-8">
       <div class="main-text" style="background-color: #FFF; border-radius: 20px; text-align: center;">
       <h2 style="padding: 20px 20px 0;">あなたの「好き！」を語ろう</h2>
-      <p style="padding: 20px 20px;">NUUME（ぬーま)は、写真共有・記事投稿を通して<br>
+      <p style="padding: 20px 20px;">NUUMA（ぬーま)は、写真共有・記事投稿を通して<br>
       自分の好きな「もの」「こと」について心ゆくまで語るコミュニティサイトです。<br>
       共通の趣味の人をフォローしたり、今まで知らなかったディープな世界を覗いたり。<br>
       みんなの「好き」が溢れるNUUMAの世界を一緒に作りましょう！</p>
@@ -32,7 +32,7 @@
     <i class="fas fa-ghost"></i>  新着投稿
   </h2>
     <div class="card-deck">
-      <%= render 'homes/card', posts: @posts %>
+      <%= render 'homes/card', posts: @posts, user: @user %>
     </div>
   </div>
 </div>
