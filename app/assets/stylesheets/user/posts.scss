@@ -15,11 +15,24 @@
 
 /* 表示しているページ番号のデザイン */
 .pagination>.active>a {
-  background-color: #6EC388;     /*背景の色を変える*/
+  background-color: #FCE38A;     /*背景の色を変える*/
   border-radius: 15px;     /*角を丸くする*/
 }
 
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {
   border-radius: 15px;    /*角を丸くする*/
+}
+
+.category-box {
+  background-color: #FCE38A;
+  display: inline;
+  border: 1px solid #FFCC1D;
+  margin: 5px;
+  padding: 3px;
+  color: black;
+  .category-name {
+    text-decoration: none;
+    color: #000;
+  }
 }

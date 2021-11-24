@@ -1,5 +1,4 @@
 <div class="container">
-
   <h3 style="margin: 20px;">
     <i class="fas fa-ghost"></i>  投稿一覧
   </h3>
@@ -10,4 +9,11 @@
   <% end %>
   </form>
   <%= render 'user/users/card', posts: @posts %>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-auto">
+      　<%= paginate @posts %>
+    </div>
+    <div class="col"></div>
+  </div>
 </div>

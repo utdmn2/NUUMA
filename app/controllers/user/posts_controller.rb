@@ -1,9 +1,9 @@
 class User::PostsController < ApplicationController
   before_action :authenticate_user!
   def index
-    # @posts = Post.order("created_at DESC").page(params[:page]).per(10)
     @categories = Category.all
-    @posts = params[:name].present? ? Category.find(params[:name]).posts : Post.all
+    @posts = params[:name].present? ? Category.find(params[:name]).posts : Post.order("created_at DESC")
+    @posts = @posts.page(params[:page]).per(10)
   end
 
   def show
@@ -51,6 +51,7 @@ class User::PostsController < ApplicationController
   def sort
     selection = params[:keyword]
     @posts = Post.sort(selection)
+    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
   end
 
   private

@@ -8,11 +8,11 @@
   <%= f.submit '並び替え' %>
   <% end %>
 
-<%= form_tag posts_path, method: :get, class: 'boards__searchForm' do %>
+<%= form_with url: posts_path, method: :get, class: 'boards__searchForm' do %>
 
   <% @categories.each do |category| %>
       <div class="category-box">
-        <%= link_to category.name, posts_path(name: category.id) %>
+        <%= link_to category.name, posts_path(name: category.id),class: "category-name" %>
       </div>
   <% end %>
 
@@ -23,7 +23,7 @@
   <div class="row">
     <div class="col"></div>
     <div class="col-auto">
-      　<%#= paginate @posts %>
+      　<%= paginate @posts %>
     </div>
     <div class="col"></div>
   </div>
