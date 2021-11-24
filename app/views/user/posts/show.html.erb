@@ -21,9 +21,13 @@
         <h4><%= @post.title %></h4>
       </div>
 
-      <p style="background-color: #FCE38A;" >カテゴリー：<% @post.categories.each do |category| %>
-        <%= category.name %>
-      <% end %></p>
+      <p>
+        <% @post.categories.each do |category| %>
+          <div class="category-box">
+            <%= category.name %>
+          </div>
+        <% end %>
+      </p>
 
       <div class="card-text my-2">
         <%= @post.body %>

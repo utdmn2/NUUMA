@@ -3,23 +3,19 @@
     <i class="fas fa-ghost"></i>  投稿一覧
   </h3>
 
-  <%= form_with model: @post, url: sort_path, method: :get, local: true do |f| %>
-  <%= f.select :keyword, options_for_select({ "投稿が新しい順" => "new", "投稿が古い順" => "old", "いいねが多い順" => "likes" }) %>
-  <%= f.submit '並び替え' %>
-  <% end %>
+      <%= form_with model: @post, url: sort_path, method: :get, local: true, style: "margin: 20px auto;" do |f| %>
+        <%= f.select :keyword, options_for_select({ "投稿が新しい順" => "new", "投稿が古い順" => "old", "いいねが多い順" => "likes" }) %>
+        <%= f.submit '並び替え' %>
+      <% end %>
+      <%= form_with url: posts_path, method: :get, class: 'boards__searchForm' do %>
+        <% @categories.each do |category| %>
+          <div class="category-box">
+            <%= link_to category.name, posts_path(name: category.id),class: "category-name" %>
+          </div>
+        <% end %>
+        <%= render 'user/users/card', posts: @posts, post: @post %>
+      <% end %>
 
-<%= form_with url: posts_path, method: :get, class: 'boards__searchForm' do %>
-
-  <% @categories.each do |category| %>
-      <div class="category-box">
-        <%= link_to category.name, posts_path(name: category.id),class: "category-name" %>
-      </div>
-  <% end %>
-
-
-  <%= render 'user/users/card', posts: @posts, post: @post %>
-
-<% end %>
   <div class="row">
     <div class="col"></div>
     <div class="col-auto">
