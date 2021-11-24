@@ -1,7 +1,9 @@
 class User::PostsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @posts = Post.order("created_at DESC").page(params[:page]).per(10)
+    # @posts = Post.order("created_at DESC").page(params[:page]).per(10)
+    @categories = Category.all
+    @posts = params[:name].present? ? Category.find(params[:name]).posts : Post.all
   end
 
   def show

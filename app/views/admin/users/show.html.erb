@@ -5,7 +5,7 @@
       <div class="col-5">
         <h3 style="margin: 20px;"><i class="far fa-address-card"></i> ユーザー詳細</h3>
         <div style="margin: 20px;">
-          <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+          <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg", size: "100x100" %>
         </div>
         <div>
           <%= link_to followings_user_relationships_path(@user.id), class: "btn mb-2", style: "color: #6EC388;" do %>

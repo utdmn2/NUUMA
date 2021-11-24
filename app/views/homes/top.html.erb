@@ -27,13 +27,11 @@
       <%= link_to "会員登録して投稿＆みんなの投稿を見る>>>", new_user_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg", style: "background-color: #F38181; color: white;" %>
     </div>
   </div>
-  <div class="row py-5">
+  <div class="row mt-5">
   <h2 style="margin-left: 20px; color: white;">
     <i class="fas fa-ghost"></i>  新着投稿
   </h2>
-    <div class="card-deck">
       <%= render 'homes/card', posts: @posts, user: @user %>
-    </div>
   </div>
 </div>
 </div>
