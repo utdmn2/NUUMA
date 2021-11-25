@@ -1,5 +1,5 @@
+<div class="container">
 <div class="main">
-
   <div class="row">
     <div class="col"></div>
       <div class="col-5">
@@ -41,9 +41,10 @@
                 <%= f.label :is_deleted, "有効", value: false %>
                 <%= f.radio_button :is_deleted, true %>
                 <%= f.label :is_deleted, "無効", value: true %>
-                <%= f.submit '変更を保存',class:"btn btn-success ml-5" %>
+                <%= f.submit '変更を保存',class:"btn ml-5", style: "margin-bottom: 10px; background-color: #6EC388; color: white;" %>
           <% end %>
       </div>
     <div class="col"></div>
   </div>
+</div>
 </div>
