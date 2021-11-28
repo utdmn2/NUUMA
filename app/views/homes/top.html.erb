@@ -18,19 +18,19 @@
     </div>
     <div class="col-md-8">
       <div class="main-text" style="background-color: #FFF; border-radius: 20px; text-align: center;">
-      <h2 style="padding: 20px 20px 0;">あなたの「好き！」を語ろう</h2>
-      <p style="padding: 20px 20px;">NUUMA（ぬーま)は、写真共有・記事投稿を通して<br>
-      自分の好きな「もの」「こと」について心ゆくまで語るコミュニティサイトです。<br>
-      共通の趣味の人をフォローしたり、今まで知らなかったディープな世界を覗いたり。<br>
-      みんなの「好き」が溢れるNUUMAの世界を一緒に作りましょう！</p>
+        <h2 style="padding: 20px 20px 0;">あなたの「好き！」を語ろう</h2>
+          <p style="padding: 20px 20px;">NUUMA（ぬーま)は、写真共有・記事投稿を通して<br>
+            自分の好きな「もの」「こと」について心ゆくまで語るコミュニティサイトです。<br>
+            共通の趣味の人をフォローしたり、今まで知らなかったディープな世界を覗いたり。<br>
+            みんなの「好き」が溢れるNUUMAの世界を一緒に作りましょう！</p>
       </div>
-      <%= link_to "会員登録して投稿＆みんなの投稿を見る>>>", new_user_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg", style: "background-color: #F38181; color: white;" %>
+        <%= link_to "会員登録して投稿＆みんなの投稿を見る>>>", new_user_registration_path, data: {"turbolinks" => false}, class: "btn btn-lg", style: "background-color: #F38181; color: white;" %>
     </div>
   </div>
   <div class="row mt-5">
-  <h2 style="margin-left: 20px; color: white;">
-    <i class="fas fa-ghost"></i>  新着投稿
-  </h2>
+    <h2 style="margin-left: 20px; color: white;">
+      <i class="fas fa-ghost"></i>  新着投稿
+    </h2>
       <%= render 'homes/card', posts: @posts, user: @user %>
   </div>
 </div>

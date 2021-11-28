@@ -1,5 +1,5 @@
 <div class="row mt-3">
-<% posts.last(4).each do |post| %>
+  <% posts.last(4).each do |post| %>
     <div class="col-sm mt-2">
       <div class="card"　style="width: 18%; margin: 10px;">
         <%= link_to post_path(post.id) do %>
@@ -29,4 +29,5 @@
         </div>
       </div>
     </div>
-<% end %>
+  <% end %>
+</div>
