@@ -31,8 +31,9 @@ Twitter等既存のSNSではなく、「熱く語る」ことを主旨とした�
 
 ## 設計書
 - ER図は[こちら](https://app.diagrams.net/#G11R7E4h1vChRv6zy5JNYo5h-DVha9QPq7)
-- 会員側フレームワークは[こちら](https://app.diagrams.net/#G1BbzqrYdGwWd2k7lp1QgqWdKV_QycIq4R)
-- 管理者側フレームワークは[こちら](https://app.diagrams.net/#G1BrLlPzr4Jk8FzswIUWFgDlpph5BOtb3S)
+- テーブル定義書は[こちら](https://docs.google.com/spreadsheets/d/1l_PbNgRn1JnpWmF2O3HykBBZ7ShYWhcnGs0VxLwCl3U/edit#gid=1373217982)
+- 会員側ワイヤーフレームは[こちら](https://app.diagrams.net/#G1BbzqrYdGwWd2k7lp1QgqWdKV_QycIq4R)
+- 管理者側ワイヤーフレームは[こちら](https://app.diagrams.net/#G1BrLlPzr4Jk8FzswIUWFgDlpph5BOtb3S)
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1w5kSOS2n0A2Ldfb5wStyXXZQDPWPBsR5jojbxHX7aJg/edit#gid=0>
