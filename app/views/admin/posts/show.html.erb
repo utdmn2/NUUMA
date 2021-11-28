@@ -38,7 +38,10 @@
         ♥ <%= @post.favorites.count %>
       </span>
     </div>
-
+  <hr>
+    <div class="comments_area">
+      <%= render 'user/post_comments/index', post: @post %>
+    </div>
     </div>
   </div>
 </div>
