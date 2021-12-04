@@ -1,6 +1,6 @@
 class User::PostsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @categories = Category.all
     @posts = params[:name].present? ? Category.find(params[:name]).posts : Post.order("created_at DESC")
